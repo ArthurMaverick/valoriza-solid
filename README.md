@@ -4,9 +4,10 @@
 
 <h1 align="center">Valoriza</h1>
 
-
-![n8n.io - Workflow Automation](https://media.giphy.com/media/iCZNslP0P9aGNUzEWs/giphy.gif)
-
+<div align="center">
+<img src="https://media.giphy.com/media/iCZNslP0P9aGNUzEWs/giphy.gif">
+</img>
+</div>
    [Valoriza](http://valoriza.io) é uma ideia onde elogiar alguem de forma efetiva
   com elogios como ajuda ou produtividade. Os usuarios poderao fazer ou receber elogios. 
 
