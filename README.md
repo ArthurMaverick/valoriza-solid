@@ -9,7 +9,7 @@
 </img>
 </div>
   
-   [Valorizar](http://valoriza.io) <h6>" É mais do que aceitar calado(a) tudo o que lhe é imposto, é ter sabedoria para alertar quando for preciso, é estar pronta para lutar diante do inimigo e ajudar a reconstruir quando tudo for ao chão. Isso por que você fez sua escolha e ama a escolha que fez "</h6>
+   <h5>" É mais do que aceitar calado(a) tudo o que lhe é imposto, é ter sabedoria para alertar quando for preciso, é estar pronta para lutar diante do inimigo e ajudar a reconstruir quando tudo for ao chão "</h5>
 
 
 <!-- <a href="https://raw.githubusercontent.com/n8n-io/n8n/master/assets/n8n-screenshot.png"><img src="https://raw.githubusercontent.com/n8n-io/n8n/master/assets/n8n-screenshot.png" width="550" alt="n8n.io - Screenshot"></a> -->
