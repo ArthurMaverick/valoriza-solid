@@ -60,10 +60,10 @@ Se você tem problemas or questões, visite o canal ficaremos felizer em recebr 
 
 
 
-## Jobs
+<!-- ## Jobs
 
 If you are interested in working for n8n and so shape the future of the project
-Se você está interesado em ajuda no projeto Valoriza visite nosso canal [hepers](https://valoriza/hepers/)
+Se você está interesado em ajuda no projeto Valoriza visite nosso canal [hepers](https://valoriza/hepers/) -->
 
 
 
