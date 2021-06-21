@@ -1,19 +1,17 @@
 [![Build Status](https://travis-ci.com/ArthurMaverick/Valoriza.svg?branch=main)](https://travis-ci.com/ArthurMaverick/Valoriza)
 ![GitHub](https://img.shields.io/github/license/ArthurMaverick/Limoncut)
-![Known Vulnerabilities](https://snyk.io/test/github/{ArthurMaverick}/{Valoriza}/badge.svg)]
-[![Coverage Status](https://coveralls.io/repos/github/ArthurMaverick/Valoriza/badge.svg?branch=main)](https://coveralls.io/github/ArthurMaverick/Valoriza?branch=main)
 [![Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://opensource.org/)
 
 <h1 align="center">Valoriza</h1>
 
 
-![n8n.io - Workflow Automation](https://raw.githubusercontent.com/n8n-io/n8n/master/assets/n8n-logo.png)
+![n8n.io - Workflow Automation](https://media.giphy.com/media/iCZNslP0P9aGNUzEWs/giphy.gif)
 
    [Valoriza](http://valoriza.io) é uma ideia onde elogiar alguem de forma efetiva
   com elogios como ajuda ou produtividade. Os usuarios poderao fazer ou receber elogios. 
 
 
-<a href="https://raw.githubusercontent.com/n8n-io/n8n/master/assets/n8n-screenshot.png"><img src="https://raw.githubusercontent.com/n8n-io/n8n/master/assets/n8n-screenshot.png" width="550" alt="n8n.io - Screenshot"></a>
+<!-- <a href="https://raw.githubusercontent.com/n8n-io/n8n/master/assets/n8n-screenshot.png"><img src="https://raw.githubusercontent.com/n8n-io/n8n/master/assets/n8n-screenshot.png" width="550" alt="n8n.io - Screenshot"></a> -->
 
 
 
