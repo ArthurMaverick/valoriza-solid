@@ -38,7 +38,7 @@ The changelog pode ser encontrado em [here](https://docs.valoriza.io/reference/c
 
 ## Usage
 
-- :books: Learn [como **instalar** e **usar** valoriza](https://github.com/ArthurMAverick/Valoriza/docs/packages/install.md)
+- :books: Learn [como **instalar** e **usar** valoriza](https://github.com/ArthurMaverick/Valoriza/blob/main/docs/packages/install.md)
 <!-- - :whale: Learn [how to run n8n in **Docker**](https://github.com/n8n-io/n8n/tree/master/docker/images/n8n/README.md) -->
 
 
