@@ -6,6 +6,6 @@ node_js:
 script: 
   - eslint 'src/**'
   - npm run build
-  - mpm run start
+  - npm run start
   - npm run test:coveralls
   
