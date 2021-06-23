@@ -9,8 +9,8 @@ services:
       POSTGRES_USER: shorAcs1
       POSTGRES_DB: 'nlw'
     volumes: 
-      - ./src/basis/repository/postgres/migrations/2-create-users.sql:/docker-entrypoint-initdb.d/2-create-users.sql
-      - ./src/basis/repository/postgres/migrations/3-create-tags.sql:/docker-entrypoint-initdb.d/3-create-tags.sql
+      - ./src/infra/repository/postgres/migrations/2-create-users.sql:/docker-entrypoint-initdb.d/2-create-users.sql
+      - ./src/infra/repository/postgres/migrations/3-create-tags.sql:/docker-entrypoint-initdb.d/3-create-tags.sql
     ports:
       - '8080:5432'  
 

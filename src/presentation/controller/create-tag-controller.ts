@@ -10,7 +10,7 @@ export namespace TagController {
   }
 }
 
-export class SignUpController implements Controller {
+export class TagsRegisterController implements Controller {
   constructor (
     private readonly validation: Validation,
     private readonly CreateTag: CreateTag

@@ -18,12 +18,13 @@ export class SignUpController implements Controller {
 
       const { name, email, admin } = request
       const dataOrNull = await this.dbAddUser.createUser({ name, email, admin })
+
       if (!dataOrNull) {
         return forbidden(new EmailInUseError())
       }
-
       return ok(dataOrNull)
     } catch (err) {
+      console.log(err)
       return serverError(err)
     }
   }
