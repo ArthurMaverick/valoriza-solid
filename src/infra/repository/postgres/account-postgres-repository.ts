@@ -23,44 +23,44 @@ export class AccountPostgresRepository implements
     async checkByEmail (email: string): Promise<CheckAccountByEmailRepository.Result> {
       await this.PostgresHelper.createConnection()
       const isvalid = await this.PostgresHelper.client
-        .query(`SELECT email FROM nlw WHERE email='${email}'`)
+        .query(`SELECT email FROM users WHERE email='${email}'`)
       return isvalid.rows[0]
     }
 
     async checkByTagName (tagName: string): Promise<CheckTagByNameRepository.Result> {
       await this.PostgresHelper.createConnection()
       const isvalid = await this.PostgresHelper.client
-        .query(`SELECT email FROM nlw WHERE name='${tagName}'`)
+        .query(`SELECT email FROM tags WHERE name='${tagName}'`)
       return isvalid.rows[0]
     }
 
     async addUser (data: AddAccountRepository.Params): Promise<AddAccountRepository.Result> {
       await this.PostgresHelper.createConnection()
       await this.PostgresHelper.client
-        .query(`INSERT INTO nlw (id,name,email,admin) values ('${data.id}','${data.name}','${data.email}','${data.admin}')`)
+        .query(`INSERT INTO users (id,name,email,admin) values ('${data.id}','${data.name}','${data.email}','${data.admin}')`)
       const response = await this.PostgresHelper.client
-        .query(`SELECT * FROM nlw WHERE id='${data.id}'`)
+        .query(`SELECT * FROM users WHERE id='${data.id}'`)
       return response.rows[0]
     }
 
     async addTags (data: AddTagAccountRepository.Params): Promise<AddTagAccountRepository.Result> {
       await this.PostgresHelper.createConnection()
       await this.PostgresHelper.client
-        .query(`INSERT INTO nlw (id,name) values ('${data.id}','${data.name}')`)
+        .query(`INSERT INTO tags (id,name) values ('${data.id}','${data.name}')`)
       const response = await this.PostgresHelper.client
-        .query(`SELECT * FROM nlw WHERE id='${data.id}'`)
+        .query(`SELECT * FROM tags WHERE id='${data.id}'`)
       return response.rows[0]
     }
 
     async findUserById (id: FindUserAccountRepository.Params):Promise<FindUserAccountRepository.Result> {
       const response = await this.PostgresHelper.client
-        .query(`SELECT * FROM nlw WHERE id='${id}'`)
+        .query(`SELECT * FROM users WHERE id='${id}'`)
       return response.rows[0]
     }
 
     async findTagById (id: FindTagAccountRepository.Params): Promise<FindTagAccountRepository.Result> {
       const response = await this.PostgresHelper.client
-        .query(`SELECT * FROM nlw WHERE id='${id}'`)
+        .query(`SELECT * FROM tags WHERE id='${id}'`)
       return response.rows[0]
     }
 }

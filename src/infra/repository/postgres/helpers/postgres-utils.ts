@@ -3,7 +3,7 @@ import { Pool, ClientConfig } from 'pg'
 export class PostgresUtils {
    client: Pool
 
-   constructor (private readonly config: ClientConfig) {
+   constructor (private config: ClientConfig) {
      this.client = new Pool(config)
    }
 

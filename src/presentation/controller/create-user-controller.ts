@@ -22,6 +22,7 @@ export class SignUpController implements Controller {
       if (!dataOrNull) {
         return forbidden(new EmailInUseError())
       }
+      console.log(dataOrNull)
       return ok(dataOrNull)
     } catch (err) {
       console.log(err)
