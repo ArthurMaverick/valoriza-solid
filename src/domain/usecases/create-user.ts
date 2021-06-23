@@ -2,7 +2,7 @@ export namespace AddUser {
   export type Params = {
   name: string
   email: string
-  admin?: string
+  admin?: boolean
   }
 
   export type User = {

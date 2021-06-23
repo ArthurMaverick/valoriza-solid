@@ -24,6 +24,6 @@ export class DbAddUser implements CreateUser {
       const user = await this.findAccountRepository.findUserById(uuid)
       return user
     }
-    return exists
+    return false
   }
 }
