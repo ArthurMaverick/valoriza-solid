@@ -9,12 +9,12 @@ export class DbAddTag implements CreateTag {
     private readonly FindTagAccountRepository: FindTagAccountRepository
   ) {}
 
-  async createTag ({ name }: AddTag.Params): Promise<AddTag.Result> {
-    const exists = await this.checkTagByNameRepository.checkByTagName(name)
+  async createTag (tagField : AddTag.Params): Promise<AddTag.Result> {
+    const exists = await this.checkTagByNameRepository.checkByTagName(tagField.name)
 
     if (!exists) {
       const uuid = this.addId.uuid()
-      const TagComplete = { id: uuid, name }
+      const TagComplete = { id: uuid, name: tagField.name }
       await this.addTagAccountRepository.addTags(TagComplete)
       const tag = await this.FindTagAccountRepository.findTagById(uuid)
       return tag

@@ -3,5 +3,5 @@ import { makeAddTagNameController } from '../factories'
 import { Router } from 'express'
 
 export default (router: Router) => {
-  router.post('/createTag', adaptRoute(makeAddTagNameController()))
+  router.post('/createtag', adaptRoute(makeAddTagNameController()))
 }

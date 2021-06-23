@@ -1,6 +1,7 @@
 export namespace AddTag {
 
   export type Params = {
+    id?: string
     name: string
   }
   export type Result = {

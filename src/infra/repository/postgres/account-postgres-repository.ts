@@ -30,7 +30,7 @@ export class AccountPostgresRepository implements
     async checkByTagName (tagName: string): Promise<CheckTagByNameRepository.Result> {
       await this.PostgresHelper.createConnection()
       const isvalid = await this.PostgresHelper.client
-        .query(`SELECT email FROM tags WHERE name='${tagName}'`)
+        .query(`SELECT name FROM tags WHERE name='${tagName}'`)
       return isvalid.rows[0]
     }
 
