@@ -19,6 +19,6 @@ export class DbAddTag implements CreateTag {
       const tag = await this.FindTagAccountRepository.findTagById(uuid)
       return tag
     }
-    return exists
+    return false
   }
 }
