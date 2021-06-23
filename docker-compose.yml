@@ -7,7 +7,7 @@ services:
     environment:
       POSTGRES_PASSWORD: postgres
       POSTGRES_USER: shorAcs1
-      POSTGRES_DB: 'nlw'
+      POSTGRES_DB: nlw
     volumes: 
       - ./src/infra/repository/postgres/migrations/2-create-users.sql:/docker-entrypoint-initdb.d/2-create-users.sql
       - ./src/infra/repository/postgres/migrations/3-create-tags.sql:/docker-entrypoint-initdb.d/3-create-tags.sql
