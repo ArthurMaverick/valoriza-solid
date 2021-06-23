@@ -12,7 +12,7 @@ export namespace AddUser {
     admin: boolean
     created_At: Date
     updated_At: Date
-  } | boolean
+  } | boolean // TODO ADD EITHER TYPE AFTER CREATE JWT
 
 }
 export interface CreateUser {

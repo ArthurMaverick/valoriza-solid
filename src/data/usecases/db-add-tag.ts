@@ -3,8 +3,8 @@ import { FindTagAccountRepository, AddTagAccountRepository, CheckTagByNameReposi
 
 export class DbAddTag implements CreateTag {
   constructor (
-    private readonly checkTagByNameRepository:CheckTagByNameRepository,
     private readonly addId: AddId,
+    private readonly checkTagByNameRepository:CheckTagByNameRepository,
     private readonly addTagAccountRepository: AddTagAccountRepository,
     private readonly FindTagAccountRepository: FindTagAccountRepository
   ) {}

@@ -8,7 +8,7 @@ export namespace AddTag {
     name: string
     created_At: Date
     updated_At: Date
-  } | boolean
+  } | boolean // TODO ADD EITHER TYPE AFTER CREATE JWT
 
 }
 export interface CreateTag {
