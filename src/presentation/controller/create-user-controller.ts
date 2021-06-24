@@ -25,6 +25,7 @@ export class SignUpController implements Controller {
 
       return ok(dataOrNull)
     } catch (err) {
+      console.log(err)
       return serverError(err)
     }
   }

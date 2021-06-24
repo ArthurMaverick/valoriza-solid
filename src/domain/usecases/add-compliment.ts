@@ -6,7 +6,7 @@ export namespace Compliments {
     message: string
    }
    export type Result = {
-    id: string;
+    id: string
     user_sender: string
     user_receiver: string
     tag_id: string
@@ -15,6 +15,6 @@ export namespace Compliments {
    }
 }
 
-interface Compliments {
+export interface CreateCompliments {
   createCompliments: (value: Compliments.Params) => Compliments.Result
 }

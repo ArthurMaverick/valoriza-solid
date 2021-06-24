@@ -3,6 +3,7 @@ import {
   AddAccountRepository,
   CheckAccountByEmailRepository,
   FindUserAccountRepository,
+  FindUserByEmailAccountRepository,
   CheckTagByNameRepository,
   AddTagAccountRepository,
   FindTagAccountRepository
@@ -14,6 +15,7 @@ export class AccountPostgresRepository implements
   AddAccountRepository,
   AddTagAccountRepository,
   FindUserAccountRepository,
+  FindUserByEmailAccountRepository,
   FindTagAccountRepository {
     private readonly PostgresHelper: PostgresUtils
     constructor (config: object) {
@@ -52,7 +54,13 @@ export class AccountPostgresRepository implements
       return response.rows[0]
     }
 
-    async findUserById (id: FindUserAccountRepository.Params):Promise<FindUserAccountRepository.Result> {
+    async findUserByEmail (email: FindUserAccountRepository.Params):Promise<FindUserAccountRepository.Result> {
+      const response = await this.PostgresHelper.client
+        .query(`SELECT * FROM users WHERE email='${email}'`)
+      return response.rows[0]
+    }
+
+    async findUserById (id: FindUserByEmailAccountRepository.Params):Promise<FindUserByEmailAccountRepository.Result> {
       const response = await this.PostgresHelper.client
         .query(`SELECT * FROM users WHERE id='${id}'`)
       return response.rows[0]

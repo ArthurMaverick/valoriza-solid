@@ -1,6 +1,7 @@
 import { AddUser, CreateUser } from '../../domain/usecases'
 import {
   AddId,
+  Hasher,
   AddAccountRepository,
   FindUserAccountRepository,
   CheckAccountByEmailRepository
@@ -9,6 +10,7 @@ import {
 export class DbAddUser implements CreateUser {
   constructor (
       private readonly addId: AddId,
+      private readonly hasher: Hasher,
       private readonly checkAccountByEmailRepository: CheckAccountByEmailRepository,
       private readonly addAccountRepository: AddAccountRepository,
       private readonly findAccountRepository: FindUserAccountRepository
@@ -19,11 +21,13 @@ export class DbAddUser implements CreateUser {
 
     if (!exists) {
       const uuid = this.addId.uuid()
-      const completeUser = { ...incompleteUser, id: uuid }
+      const passwordHasher = await this.hasher.hash(incompleteUser.password)
+      const completeUser = { ...incompleteUser, id: uuid, password: passwordHasher }
       await this.addAccountRepository.addUser(completeUser)
       const user = await this.findAccountRepository.findUserById(uuid)
       return user
     }
-    return false
+
+    return exists && false
   }
 }

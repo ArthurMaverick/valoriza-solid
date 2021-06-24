@@ -2,14 +2,14 @@ export namespace AddTag {
 
   export type Params = {
     id?: string
-    name: string
+    name: string,
   }
   export type Result = {
     id: string
     name: string
     created_At: Date
     updated_At: Date
-  } | boolean // TODO ADD EITHER TYPE AFTER CREATE JWT
+  } | boolean
 
 }
 export interface CreateTag {

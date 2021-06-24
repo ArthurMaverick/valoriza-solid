@@ -18,7 +18,6 @@ export class TagsRegisterController implements Controller {
   ) {}
 
   async handle (request: TagController.Request): Promise<HttpResponse> {
-    console.log(request)
     try {
       const error = this.validation.validate(request)
       if (error) {
@@ -30,7 +29,7 @@ export class TagsRegisterController implements Controller {
       if (!dataOrNull) {
         return forbidden(new NameInUseError())
       }
-      console.log(dataOrNull)
+
       return ok(dataOrNull)
     } catch (err) {
       console.log(err)
