@@ -2,6 +2,7 @@ export namespace AddUser {
   export type Params = {
   name: string
   email: string
+  password: string
   admin?: boolean
   }
 
@@ -9,6 +10,7 @@ export namespace AddUser {
     id: string
     name: string
     email: string
+    password: string
     admin: boolean
     created_At: Date
     updated_At: Date

@@ -16,8 +16,8 @@ export class SignUpController implements Controller {
         return badRequest(error)
       }
 
-      const { name, email, admin } = request
-      const dataOrNull = await this.dbAddUser.createUser({ name, email, admin })
+      const { name, email, password, admin } = request
+      const dataOrNull = await this.dbAddUser.createUser({ name, email, password, admin })
 
       if (!dataOrNull) {
         return forbidden(new EmailInUseError())
@@ -34,6 +34,7 @@ export namespace SignUpController {
   export type Request = {
     name: string
     email: string
+    password: string
     admin?: boolean
   }
 }

@@ -37,7 +37,7 @@ export class AccountPostgresRepository implements
     async addUser (data: AddAccountRepository.Params): Promise<AddAccountRepository.Result> {
       await this.PostgresHelper.createConnection()
       await this.PostgresHelper.client
-        .query(`INSERT INTO users (id,name,email,admin) values ('${data.id}','${data.name}','${data.email}','${data.admin}')`)
+        .query(`INSERT INTO users (id,name,email,password,admin) values ('${data.id}','${data.name}','${data.email}','${data.password}','${data.admin}')`)
       const response = await this.PostgresHelper.client
         .query(`SELECT * FROM users WHERE id='${data.id}'`)
       return response.rows[0]

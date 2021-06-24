@@ -8,14 +8,14 @@
     "build": "tsc",
     "up": "npm run build && docker-compose up -d",
     "down": "docker-compose down && rm -rf dist",
-    "start": "tsc && docker-compose up -d && node dist/main/server.js",
+    "start": "docker-compose up -d && npm run build && node dist/main/server.js",
     "test": "jest --watchAll",
     "test:staged": "jest --passWithNoTests",
     "test:ci": "jest --coverage",
     "prepare": "husky install",
     "test:coveralls": "jest --coverage && coveralls < coverage/lcov.info"
   },
-  "keywords": [],
+  "keywords": ["clean Architecture", "clean-code", "valoriza"],
   "author": "",
   "license": "MIT",
   "devDependencies": {

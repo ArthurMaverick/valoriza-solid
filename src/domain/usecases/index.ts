@@ -1,2 +1,2 @@
-export * from './create-user'
-export * from './create-tag'
+export * from './user'
+export * from './tag'
