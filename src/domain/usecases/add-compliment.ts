@@ -12,9 +12,9 @@ export namespace Compliments {
     tag_id: string
     message: string
     created_at: Date
-   }
+   } | boolean
 }
 
 export interface CreateCompliments {
-  createCompliments: (value: Compliments.Params) => Compliments.Result
+  createCompliments: (value: Compliments.Params) => Promise<Compliments.Result>
 }

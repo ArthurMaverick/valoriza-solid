@@ -5,15 +5,19 @@ import {
   FindUserAccountRepository,
   FindUserByEmailAccountRepository,
   CheckTagByNameRepository,
+  CheckTagByIdRepository,
   AddTagAccountRepository,
-  FindTagAccountRepository
+  FindTagAccountRepository,
+  AddComplimentsAccountRepository
 } from '../../../data/rules/db'
 
 export class AccountPostgresRepository implements
   CheckAccountByEmailRepository,
   CheckTagByNameRepository,
+  CheckTagByIdRepository,
   AddAccountRepository,
   AddTagAccountRepository,
+  AddComplimentsAccountRepository,
   FindUserAccountRepository,
   FindUserByEmailAccountRepository,
   FindTagAccountRepository {
@@ -34,6 +38,22 @@ export class AccountPostgresRepository implements
       const isvalid = await this.PostgresHelper.client
         .query(`SELECT name FROM tags WHERE name='${tagName}'`)
       return isvalid.rows[0]
+    }
+
+    async checkByTagId (tagId: string): Promise<CheckTagByIdRepository.Result> {
+      await this.PostgresHelper.createConnection()
+      const isvalid = await this.PostgresHelper.client
+        .query(`SELECT id FROM tags WHERE id='${tagId}'`)
+      return isvalid.rows[0]
+    }
+
+    async addCompliments (data: AddComplimentsAccountRepository.Params): Promise<AddComplimentsAccountRepository.Result> {
+      await this.PostgresHelper.createConnection()
+      await this.PostgresHelper.client
+        .query(`INSERT INTO compliments (message,tag_id,user_receiver,user_sender,id) values ('${data.message}','${data.tag_id}','${data.user_receiver}','${data.user_sender}','${data.id}')`)
+      const response = await this.PostgresHelper.client
+        .query(`SELECT * FROM compliments WHERE id='${data.id}'`)
+      return response.rows[0]
     }
 
     async addUser (data: AddAccountRepository.Params): Promise<AddAccountRepository.Result> {
