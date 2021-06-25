@@ -9,11 +9,11 @@ export class PostgresUtils {
 
    async createConnection () {
      const callback = await this.client.connect()
-     callback ? console.log('conectado') : console.error(callback)
+     callback ? console.log('conectado ao Postgres') : console.error(callback)
    }
 
    async desconnect () {
      await this.client.end()
-     console.log('desconectado')
+     console.log('desconectado do Postgres')
    }
 }

@@ -16,5 +16,5 @@ export namespace Compliments {
 }
 
 export interface CreateCompliments {
-  createCompliments: (value: Compliments.Params) => Promise<Compliments.Result>
+  createCompliments: (Complimentsvalue: Compliments.Params) => Promise<Compliments.Result>
 }
