@@ -12,4 +12,8 @@ criar um front end
 
 arquitetura ok
 criar exeçoes ok
-usar postgres ok
+
+
+
+db loadaccountbytoken decifra o token recebido pelo metodo load se token valido e salva 
+no banco de dados 

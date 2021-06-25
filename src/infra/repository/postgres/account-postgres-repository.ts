@@ -8,7 +8,9 @@ import {
   CheckTagByIdRepository,
   AddTagAccountRepository,
   FindTagAccountRepository,
-  AddComplimentsAccountRepository
+  AddComplimentsAccountRepository,
+  LoadAccountByTokenRepository,
+  UpdateAccessTokenRepository
 } from '../../../data/rules/db'
 
 export class AccountPostgresRepository implements
@@ -20,10 +22,26 @@ export class AccountPostgresRepository implements
   AddComplimentsAccountRepository,
   FindUserAccountRepository,
   FindUserByEmailAccountRepository,
-  FindTagAccountRepository {
+  FindTagAccountRepository,
+//
+  LoadAccountByTokenRepository,
+  UpdateAccessTokenRepository {
     private readonly PostgresHelper: PostgresUtils
     constructor (config: object) {
       this.PostgresHelper = new PostgresUtils(config)
+    }
+
+    async loadByToken (token: string): Promise<LoadAccountByTokenRepository.Result> {
+      await this.PostgresHelper.createConnection()
+      const response = await this.PostgresHelper.client
+        .query(`SELECT id FROM tokens WHERE token='${token}'`)
+      return response.rows[0]
+    }
+
+    async updateAccessToken (id: string, token:string): Promise<void> {
+      await this.PostgresHelper.createConnection()
+      await this.PostgresHelper.client
+        .query(`UPDATE tokens SET token=${token} WHERE id'${id}'`)
     }
 
     async checkByEmail (email: string): Promise<CheckAccountByEmailRepository.Result> {

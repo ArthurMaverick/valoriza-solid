@@ -12,6 +12,7 @@ services:
       - ./src/infra/repository/postgres/migrations/2-create-users.sql:/docker-entrypoint-initdb.d/2-create-users.sql
       - ./src/infra/repository/postgres/migrations/3-create-tags.sql:/docker-entrypoint-initdb.d/3-create-tags.sql
       - ./src/infra/repository/postgres/migrations/4-create-compliments.sql:/docker-entrypoint-initdb.d/4-create-compliments.sql
+      - ./src/infra/repository/postgres/migrations/5-refresh-token.sql:/docker-entrypoint-initdb.d/5-refresh-token.sql
     ports:
       - '8080:5432'  
 
